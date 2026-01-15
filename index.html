@@ -1,109 +1,334 @@
 <!DOCTYPE html>
-<html lang="fi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lotta Nevala | UI/UX Portfolio</title>
-    <meta name="description" content="Lotta Nevalan UI/UX suunnittelijan portfolio. Tutustu projekteihini ja osaamiseeni.">
+    <title>Lotta Nevala | UX/UI Designer</title>
+    <meta name="description" content="Lotta Nevala - UX/UI Designer crafting thoughtful digital experiences. View my portfolio of user-centered design projects.">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Lotta Nevala | UX/UI Designer">
+    <meta property="og:description" content="UX/UI Designer crafting thoughtful digital experiences.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://88lode.github.io/porfolio/">
+
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
 </head>
 <body>
-
     <!-- Navigation -->
-    <nav class="navbar">
-        <div class="container nav-container">
-            <a href="#home" class="logo">Lotta Nevala</a>
-            <ul class="nav-links">
-                <li><a href="#projects" class="nav-link">Projektit</a></li>
-                <li><a href="#about" class="nav-link">About</a></li>
-                <li><a href="#contact" class="btn-primary">Ota yhteyttä</a></li>
-            </ul>
-            <div class="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
+    <nav class="nav" role="navigation" aria-label="Main navigation">
+        <div class="nav__container">
+            <a href="#home" class="nav__logo" aria-label="Home">
+                <span class="nav__logo-text">Lotta Nevala</span>
+            </a>
+
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li class="nav__item">
+                        <a href="#work" class="nav__link" data-i18n="nav.work">Work</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#about" class="nav__link" data-i18n="nav.about">About</a>
+                    </li>
+                    <li class="nav__item">
+                        <a href="#contact" class="nav__link" data-i18n="nav.contact">Contact</a>
+                    </li>
+                </ul>
+
+                <!-- Language Switcher -->
+                <div class="nav__lang">
+                    <button class="nav__lang-btn active" data-lang="en" aria-label="Switch to English">EN</button>
+                    <span class="nav__lang-divider">/</span>
+                    <button class="nav__lang-btn" data-lang="fi" aria-label="Vaihda suomeksi">FI</button>
+                </div>
             </div>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="nav__toggle" id="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+                <span class="nav__toggle-bar"></span>
+                <span class="nav__toggle-bar"></span>
+                <span class="nav__toggle-bar"></span>
+            </button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <header id="home" class="hero">
-        <div class="container hero-content">
-            <h1 class="hero-title fade-in-up">Lotta Nevala</h1>
-            <p class="hero-subtitle fade-in-up delay-1">UI/UX Suunnittelija</p>
-            <div class="hero-cta fade-in-up delay-2">
-                <a href="#projects" class="btn-secondary">Katso projektit</a>
-            </div>
-        </div>
-    </header>
-
-    <!-- Projects Section -->
-    <section id="projects" class="projects-section">
-        <div class="container">
-            <h2 class="section-title fade-in-up">Valitut Projektit</h2>
-            <div class="projects-grid">
-                <!-- Project 1 Placeholder -->
-                <article class="project-card fade-in-up">
-                    <div class="project-image-placeholder"></div>
-                    <div class="project-info">
-                        <h3>Mobiilisovellus Konsepti</h3>
-                        <p class="project-role">UI/UX Design</p>
-                        <a href="#" class="project-link">Katso lisää &rarr;</a>
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero__container">
+                <div class="hero__content">
+                    <p class="hero__greeting animate-fade-up" data-i18n="hero.greeting">Hello, I'm</p>
+                    <h1 class="hero__title animate-fade-up animate-delay-1">Lotta Nevala</h1>
+                    <p class="hero__subtitle animate-fade-up animate-delay-2" data-i18n="hero.subtitle">UX/UI Designer</p>
+                    <p class="hero__tagline animate-fade-up animate-delay-3" data-i18n="hero.tagline">
+                        Crafting thoughtful digital experiences through user-centered design
+                    </p>
+                    <div class="hero__cta animate-fade-up animate-delay-4">
+                        <a href="#work" class="btn btn--primary" data-i18n="hero.cta">View my work</a>
+                        <a href="#contact" class="btn btn--outline" data-i18n="hero.cta2">Get in touch</a>
                     </div>
-                </article>
-                 <!-- Project 2 Placeholder -->
-                 <article class="project-card fade-in-up delay-1">
-                    <div class="project-image-placeholder"></div>
-                    <div class="project-info">
-                        <h3>Verkkosivuston Uudistus</h3>
-                        <p class="project-role">Web Design</p>
-                        <a href="#" class="project-link">Katso lisää &rarr;</a>
-                    </div>
-                </article>
-                 <!-- Project 3 Placeholder -->
-                 <article class="project-card fade-in-up delay-2">
-                    <div class="project-image-placeholder"></div>
-                    <div class="project-info">
-                        <h3>Käyttäjäkokemus Analyysi</h3>
-                        <p class="project-role">UX Research</p>
-                        <a href="#" class="project-link">Katso lisää &rarr;</a>
-                    </div>
-                </article>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="about-section">
-        <div class="container about-container">
-            <div class="about-content fade-in-up">
-                <h2 class="section-title">Minusta</h2>
-                <div class="about-text">
-                    <p>Hei! Olen Lotta, intohimoinen UI/UX-suunnittelija. Keskityn luomaan käyttäjäystävällisiä ja visuaalisesti houkuttelevia digitaalisia kokemuksia.</p>
-                    <p>[Tähän tulee tarkempi kuvaus osaamisestasi ja taustastasi CV:n perusteella. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.]</p>
                 </div>
-                <div class="about-actions">
-                    <a href="https://www.linkedin.com/in/lotta-nevala-581513193/" target="_blank" class="btn-text">LinkedIn &rarr;</a>
+                <div class="hero__scroll">
+                    <span class="hero__scroll-text" data-i18n="hero.scroll">Scroll to explore</span>
+                    <div class="hero__scroll-line"></div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <!-- Work Section -->
+        <section id="work" class="work">
+            <div class="work__container">
+                <header class="section-header">
+                    <span class="section-header__label animate-fade-up" data-i18n="work.label">Portfolio</span>
+                    <h2 class="section-header__title animate-fade-up animate-delay-1" data-i18n="work.title">Selected Projects</h2>
+                    <p class="section-header__desc animate-fade-up animate-delay-2" data-i18n="work.desc">
+                        A collection of projects where research meets design to create meaningful user experiences.
+                    </p>
+                </header>
+
+                <div class="work__grid">
+                    <!-- Project 1 -->
+                    <article class="project-card animate-fade-up">
+                        <a href="projects/project-1.html" class="project-card__link">
+                            <div class="project-card__image">
+                                <div class="project-card__placeholder">
+                                    <span>Project Image</span>
+                                </div>
+                            </div>
+                            <div class="project-card__content">
+                                <span class="project-card__category" data-i18n="projects.p1.category">Mobile App Design</span>
+                                <h3 class="project-card__title" data-i18n="projects.p1.title">Healthcare Companion App</h3>
+                                <p class="project-card__desc" data-i18n="projects.p1.desc">
+                                    Redesigning the patient experience for a digital health platform.
+                                </p>
+                                <span class="project-card__cta" data-i18n="work.viewProject">View case study</span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Project 2 -->
+                    <article class="project-card animate-fade-up animate-delay-1">
+                        <a href="projects/project-2.html" class="project-card__link">
+                            <div class="project-card__image">
+                                <div class="project-card__placeholder">
+                                    <span>Project Image</span>
+                                </div>
+                            </div>
+                            <div class="project-card__content">
+                                <span class="project-card__category" data-i18n="projects.p2.category">Web Design</span>
+                                <h3 class="project-card__title" data-i18n="projects.p2.title">E-commerce Redesign</h3>
+                                <p class="project-card__desc" data-i18n="projects.p2.desc">
+                                    Improving conversion rates through user research and iterative design.
+                                </p>
+                                <span class="project-card__cta" data-i18n="work.viewProject">View case study</span>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Project 3 -->
+                    <article class="project-card animate-fade-up animate-delay-2">
+                        <a href="projects/project-3.html" class="project-card__link">
+                            <div class="project-card__image">
+                                <div class="project-card__placeholder">
+                                    <span>Project Image</span>
+                                </div>
+                            </div>
+                            <div class="project-card__content">
+                                <span class="project-card__category" data-i18n="projects.p3.category">UX Research</span>
+                                <h3 class="project-card__title" data-i18n="projects.p3.title">Banking Dashboard</h3>
+                                <p class="project-card__desc" data-i18n="projects.p3.desc">
+                                    User research and interface design for a fintech startup.
+                                </p>
+                                <span class="project-card__cta" data-i18n="work.viewProject">View case study</span>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="about__container">
+                <div class="about__content">
+                    <header class="section-header section-header--left">
+                        <span class="section-header__label animate-fade-up" data-i18n="about.label">About me</span>
+                        <h2 class="section-header__title animate-fade-up animate-delay-1" data-i18n="about.title">Designer with a passion for solving problems</h2>
+                    </header>
+
+                    <div class="about__text animate-fade-up animate-delay-2">
+                        <p data-i18n="about.bio1">
+                            I'm a UX/UI designer based in Finland with a background in visual arts and a deep interest in human-centered design. I believe great design comes from understanding people and their needs.
+                        </p>
+                        <p data-i18n="about.bio2">
+                            When I'm not designing, you can find me exploring illustration, character design, or discovering new creative inspiration. I bring this artistic perspective to every digital experience I create.
+                        </p>
+                    </div>
+
+                    <!-- Skills -->
+                    <div class="about__skills animate-fade-up animate-delay-3">
+                        <h3 class="about__skills-title" data-i18n="about.skillsTitle">Tools & Skills</h3>
+                        <div class="skills-grid">
+                            <div class="skill-item">
+                                <div class="skill-item__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="3" width="18" height="18" rx="2"/>
+                                        <circle cx="8.5" cy="8.5" r="1.5"/>
+                                        <path d="M20.4 14.5L16 10 4 20"/>
+                                    </svg>
+                                </div>
+                                <span class="skill-item__name">Figma</span>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 19l7-7 3 3-7 7-3-3z"/>
+                                        <path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/>
+                                        <path d="M2 2l7.586 7.586"/>
+                                        <circle cx="11" cy="11" r="2"/>
+                                    </svg>
+                                </div>
+                                <span class="skill-item__name">Adobe XD</span>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M12 2L2 7l10 5 10-5-10-5z"/>
+                                        <path d="M2 17l10 5 10-5"/>
+                                        <path d="M2 12l10 5 10-5"/>
+                                    </svg>
+                                </div>
+                                <span class="skill-item__name">Sketch</span>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="2" y="2" width="20" height="20" rx="2"/>
+                                        <path d="M7 7h10v10H7z"/>
+                                    </svg>
+                                </div>
+                                <span class="skill-item__name">Photoshop</span>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <polygon points="12,2 2,7 2,17 12,22 22,17 22,7"/>
+                                    </svg>
+                                </div>
+                                <span class="skill-item__name">Illustrator</span>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <circle cx="12" cy="12" r="10"/>
+                                        <path d="M12 6v6l4 2"/>
+                                    </svg>
+                                </div>
+                                <span class="skill-item__name">Prototyping</span>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                        <circle cx="9" cy="7" r="4"/>
+                                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+                                    </svg>
+                                </div>
+                                <span class="skill-item__name">User Research</span>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-item__icon">
+                                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="3" y="3" width="7" height="7"/>
+                                        <rect x="14" y="3" width="7" height="7"/>
+                                        <rect x="14" y="14" width="7" height="7"/>
+                                        <rect x="3" y="14" width="7" height="7"/>
+                                    </svg>
+                                </div>
+                                <span class="skill-item__name">Wireframing</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Links -->
+                    <div class="about__links animate-fade-up animate-delay-4">
+                        <a href="https://www.linkedin.com/in/lotta-nevala-581513193/" target="_blank" rel="noopener noreferrer" class="about__link">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                            <span>LinkedIn</span>
+                        </a>
+                        <a href="https://www.artstation.com/lode_88" target="_blank" rel="noopener noreferrer" class="about__link">
+                            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20">
+                                <path d="M0 17.723l2.027 3.505h.001a2.424 2.424 0 0 0 2.164 1.333h13.457l-2.792-4.838H0zm24-3.025L16.291 1.472a2.424 2.424 0 0 0-2.164-1.333H9.965l14.035 24.293V14.698zm-3.324 3.025l-8.68-15.024-3.4 5.887 5.28 9.137h6.8z"/>
+                            </svg>
+                            <span>ArtStation</span>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Profile Image -->
+                <div class="about__image animate-fade-up">
+                    <div class="about__image-wrapper">
+                        <div class="about__image-placeholder">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+                                <circle cx="12" cy="7" r="4"/>
+                            </svg>
+                            <span data-i18n="about.photoPlaceholder">Photo</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <div class="contact__container">
+                <header class="section-header">
+                    <span class="section-header__label animate-fade-up" data-i18n="contact.label">Contact</span>
+                    <h2 class="section-header__title animate-fade-up animate-delay-1" data-i18n="contact.title">Let's work together</h2>
+                    <p class="section-header__desc animate-fade-up animate-delay-2" data-i18n="contact.desc">
+                        Have a project in mind? I'd love to hear about it. Let's create something amazing together.
+                    </p>
+                </header>
+
+                <div class="contact__content animate-fade-up animate-delay-3">
+                    <a href="mailto:hello@lottanevala.com" class="contact__email">
+                        <span data-i18n="contact.emailLabel">Say hello</span>
+                        <span class="contact__email-address">hello@lottanevala.com</span>
+                    </a>
+
+                    <div class="contact__social">
+                        <a href="https://www.linkedin.com/in/lotta-nevala-581513193/" target="_blank" rel="noopener noreferrer" class="contact__social-link" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                            </svg>
+                        </a>
+                        <a href="https://www.artstation.com/lode_88" target="_blank" rel="noopener noreferrer" class="contact__social-link" aria-label="ArtStation">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M0 17.723l2.027 3.505h.001a2.424 2.424 0 0 0 2.164 1.333h13.457l-2.792-4.838H0zm24-3.025L16.291 1.472a2.424 2.424 0 0 0-2.164-1.333H9.965l14.035 24.293V14.698zm-3.324 3.025l-8.68-15.024-3.4 5.887 5.28 9.137h6.8z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer id="contact" class="footer">
-        <div class="container footer-content">
-            <div class="footer-left">
-                <p>&copy; 2026 Lotta Nevala. All rights reserved.</p>
-            </div>
-            <div class="footer-right">
-                <a href="https://www.linkedin.com/in/lotta-nevala-581513193/" target="_blank">LinkedIn</a>
-            </div>
+    <footer class="footer">
+        <div class="footer__container">
+            <p class="footer__copyright">&copy; 2026 Lotta Nevala. <span data-i18n="footer.rights">All rights reserved.</span></p>
+            <p class="footer__credit" data-i18n="footer.credit">Designed with care in Finland</p>
         </div>
     </footer>
-
 </body>
 </html>
